@@ -1,0 +1,32 @@
+
+<table >
+  <tbody>
+    <tr>
+      <td style="width:400px;">
+        <mat-form-field [formGroup]="form">
+          <textarea formControlName="content" matInput rows="4"></textarea>
+        </mat-form-field>
+      </td>
+      <td *ngIf="imagePreview !== '' && imagePreview && form.get('image').valid">
+        <img class="image-preview"  [src] = "imagePreview">
+      </td>
+      <td>
+        <button class="send-button" mat-raised-button (click)="onAddMessage()">
+          <mat-icon>send</mat-icon>
+          <span class="actions-text">Send</span>
+        </button>
+
+        <button class="photo-button" mat-raised-button (click)="filePicker.click()">
+          <mat-icon>add_a_photo</mat-icon>
+          <span class="actions-text">Add a photo</span>
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<input type="file" #filePicker (change)="onImagePicked($event)">
+
+
+

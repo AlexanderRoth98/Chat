@@ -1,0 +1,35 @@
+
+<mat-card [ngClass]="{'my-chat-element': author._id == loggedUser}" class="chat-element">
+  <mat-card-header>
+    <div mat-card-avatar [style.background-image] ="avatar" class="avatar"></div>
+    <mat-card-title *ngIf="author._id != loggedUser">{{author.username}}</mat-card-title>
+    <mat-card-title *ngIf="author._id == loggedUser">Me</mat-card-title>
+    <mat-card-subtitle>{{message.time}}</mat-card-subtitle>
+    <span class="spacer"></span>
+    <button mat-icon-button [matMenuTriggerFor]="menu">
+      <mat-icon>more_vert</mat-icon>
+    </button>
+    <mat-menu xPosition="before" #menu="matMenu">
+      <button *ngIf="author._id == loggedUser" (click)="onDelete(message.id)" mat-menu-item>
+        <mat-icon>delete</mat-icon>
+        <span>Delete</span>
+      </button>
+      <button *ngIf="author._id == loggedUser" (click)="openDialog()" mat-menu-item>
+        <mat-icon>mark_chat_read</mat-icon>
+        <span>Read</span>
+      </button>
+      <button (click)="copyContent(message.content)" mat-menu-item>
+        <mat-icon>content_copy</mat-icon>
+        <span>Copy</span>
+      </button>
+    </mat-menu>
+
+  </mat-card-header>
+  <mat-card-content>
+    <div *ngIf="displayLink" [innerHTML]="message.content"> {{message.content}} </div>
+    <div *ngIf="!displayLink && message.content!='null'"> {{message.content}}</div>
+  </mat-card-content>
+  <mat-card-content *ngIf="message.imagePath" class="image-content">
+  <img  mat-card-image [src]=message.imagePath>
+</mat-card-content>
+</mat-card>

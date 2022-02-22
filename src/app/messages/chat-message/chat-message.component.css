@@ -1,0 +1,30 @@
+.chat-element {
+  margin-top: 20px;
+}
+
+.my-chat-element{
+  background-color: #D3D3D3;
+}
+
+.avatar {
+
+  background-size: cover;
+  height: 50px;
+  width: 50px;
+}
+
+
+.spacer {
+  flex: 1 1 auto;
+}
+
+mat-card img {
+  height: 60%;
+  width: 60%;
+
+}
+
+.image-content{
+  margin-top: 30px;
+  margin-left: 90px;
+}

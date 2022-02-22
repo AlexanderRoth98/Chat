@@ -1,0 +1,19 @@
+hr{
+  margin-top: 30px;
+}
+tbody{
+  display:block;
+  overflow:auto;
+  height:400px;
+  width:100%;
+}
+.chat-area-style{
+
+  height: 400px;
+  display: block;
+
+}
+
+
+
+

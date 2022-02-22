@@ -1,0 +1,35 @@
+mat-form-field {
+  width: 100%;
+  margin: 15px;
+}
+
+mat-icon {
+  color: white;
+}
+
+.actions-text {
+  color: white;
+  margin-left: 10px;
+}
+
+.send-button {
+  margin-left: 50px;
+  background-color: #3f51b5;
+}
+
+.photo-button {
+  margin-left: 15px;
+  background-color: #3f51b5;
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+.image-preview {
+  height: 6rem;
+  margin-left: 50px;
+}
+
+
+

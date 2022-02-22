@@ -1,0 +1,16 @@
+<mat-card>
+  <table class="chat-area-style">
+    <tbody id="tableBody">
+      <div *ngFor="let message of messages">
+      <tr >
+        <app-chat-message [message]="message"></app-chat-message>
+      </tr>
+
+    </div>
+
+    </tbody>
+  </table>
+  <hr>
+  <app-add-message></app-add-message>
+
+</mat-card>
